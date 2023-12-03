@@ -22,6 +22,11 @@ public class App extends Application {
         stage.show();
     }
 
+    /**
+     * Sets the root frame to the name of the fxml
+     * @param fxml NAME of fxml, no .fxml to include
+     * @throws IOException
+     */
     public static void setRoot(String fxml) throws IOException { //IF BROKE, REMOVE SCOPE
         scene.setRoot(loadFXML(fxml));
     }
