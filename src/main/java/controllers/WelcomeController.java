@@ -1,7 +1,10 @@
 package controllers;
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import scrum_fe.App;
 
 public class WelcomeController {
 
@@ -12,14 +15,14 @@ public class WelcomeController {
     private Button signUp;
 
     @FXML
-    void returningUser(ActionEvent event) {
+    void signIn(ActionEvent event) {
 
     }
 
     @FXML
-    void signUp(ActionEvent event) {
-
+    void signUp(ActionEvent event) throws IOException {
+        System.out.println("SignUp Button Pressed");
+        App.setRoot("signup");
     }
 
 }
-
