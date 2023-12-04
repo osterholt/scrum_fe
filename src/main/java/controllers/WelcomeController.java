@@ -15,7 +15,9 @@ public class WelcomeController {
     private Button signUp;
 
     @FXML
-    void signIn(ActionEvent event) {
+    void signIn(ActionEvent event) throws IOException {
+        System.out.println("Login Button Pressed");
+        App.setRoot("login");
 
     }
 

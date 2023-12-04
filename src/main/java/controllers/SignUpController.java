@@ -35,6 +35,7 @@ public class SignUpController {
         if(LoginManager.getInstance().checkEmail(emailStr) && LoginManager.getInstance().checkPassword(passwordStr) && fullNameArr.length > 1) {
             UUID userID = AppFacade.getInstance().signUp(fullNameArr[0], fullNameArr[fullNameArr.length - 1], emailStr, passwordStr);
             User user = LoginManager.getInstance().getUser(userID);
+            DataWriter.saveUsers();
             //Go to Board Display
             if(user != null) {
                 System.out.println("DEBUG: Sign Up Success!!");
