@@ -16,10 +16,6 @@
          </font>
       </Text>
       <ChoiceBox fx:id="companyChoices" layoutX="536.0" layoutY="37.0" minWidth="100.0" onContextMenuRequested="#displayCompanies" onMouseClicked="#displayBoards" />
-      <Label fx:id="welcomeLabel" layoutX="178.0" layoutY="291.0" text="Welcome: USER">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+      <Label fx:id="welcomeLabel" layoutX="160.0" layoutY="271.0" text="Welcome: USER" />
    </children>
 </AnchorPane>
