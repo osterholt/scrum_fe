@@ -55,7 +55,7 @@ public class User {
     public void addCompany(Company company) {
         if(company == null)
             return;
-        companies.add(company); //TODO: Fix when add Company class
+        companies.add(company); 
     }
     private boolean removeCompany(Company company) {
         if(company == null)
