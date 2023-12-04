@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1459.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUpController">
+   <children>
+      <Button fx:id="signUp" layoutX="545.0" layoutY="675.0" mnemonicParsing="false" onAction="#signUp" prefHeight="75.0" prefWidth="350.0" styleClass="styles.css" text="Sign Up">
+         <font>
+            <Font name="SansSerif Regular" size="36.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="620.0" layoutY="144.0" prefHeight="50.0" prefWidth="200.0" text="Scrum Board" textAlignment="CENTER">
+         <font>
+            <Font name="SansSerif Regular" size="30.0" />
+         </font>
+      </Label>
+      <TextField id="fullName" fx:id="fullName" layoutX="470.0" layoutY="400.0" prefHeight="60.0" prefWidth="500.0" promptText="Full Name" styleClass="styles.css">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField id="fullName" fx:id="email" layoutX="470.0" layoutY="475.0" prefHeight="60.0" prefWidth="500.0" promptText="Email" styleClass="styles.css">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField id="fullName" fx:id="password" layoutX="470.0" layoutY="550.0" prefHeight="60.0" prefWidth="500.0" promptText="Password" styleClass="styles.css">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <CheckBox alignment="CENTER" contentDisplay="CENTER" layoutX="623.75" layoutY="637.0" mnemonicParsing="false" text="Accept terms and conditions">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>
