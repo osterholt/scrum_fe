@@ -28,19 +28,18 @@ public class LoginController {
         String emailStr = email.getText();
         String passwordStr = password.getText();
 
-
-        if(LoginManager.getInstance().checkEmail(emailStr) && LoginManager.getInstance().checkPassword(passwordStr)) {
-            AppFacade.getInstance().login(emailStr, passwordStr);
-            User user = AppFacade.getInstance().getCurrentUser();
-            //Go to Board Display
-            if(user != null) {
-                System.out.println("DEBUG: Log in Success!!");
-                System.out.println("Active User: " + AppFacade.getInstance().getActiveUser());
-                // BoardController.setWelcomeText(user.getFirstName(), user.getLastName());
-                //Set Companies!
-                App.setRoot("board");
-            }
+        // FROM CAM: Removed the checks for email and password because they already exist!
+        AppFacade.getInstance().login(emailStr, passwordStr);
+        User user = AppFacade.getInstance().getCurrentUser();
+        //Go to Board Display
+        if(user != null) {
+            System.out.println("DEBUG: Log in Success!!");
+            System.out.println("Active User: " + AppFacade.getInstance().getActiveUser());
+            // BoardController.setWelcomeText(user.getFirstName(), user.getLastName());
+            //Set Companies!
+            App.setRoot("board");
         }
+        
     }
 
 }
