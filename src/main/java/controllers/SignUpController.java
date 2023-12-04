@@ -33,11 +33,15 @@ public class SignUpController {
         String passwordStr = password.getText();
 
         if(LoginManager.getInstance().checkEmail(emailStr) && LoginManager.getInstance().checkPassword(passwordStr) && fullNameArr.length > 1) {
-            UUID user = AppFacade.getInstance().signUp(fullNameArr[0], fullNameArr[fullNameArr.length - 1], emailStr, passwordStr);
+            UUID userID = AppFacade.getInstance().signUp(fullNameArr[0], fullNameArr[fullNameArr.length - 1], emailStr, passwordStr);
+            User user = LoginManager.getInstance().getUser(userID);
+            //Go to Board Display
             if(user != null) {
                 System.out.println("DEBUG: Sign Up Success!!");
                 System.out.println("Active User: " + AppFacade.getInstance().getActiveUser());
-                // App.setRoot("");
+                // BoardController.setWelcomeText(user.getFirstName(), user.getLastName());
+                //Set Companies!
+                App.setRoot("board");
             }
             else {
                 //TODO: Throw error message.

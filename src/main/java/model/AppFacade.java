@@ -51,6 +51,7 @@ public class AppFacade {
         return activeUser;
     }
 
+    //TODO: What if user exists??
     public UUID signUp(String firstName, String lastName, String email, String password) {
         User user = new User(firstName, lastName, email, password);
         LoginManager.getInstance().addUser(user);

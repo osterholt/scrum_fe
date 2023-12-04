@@ -33,11 +33,11 @@ public class LoginManager {
         }
         // check if email is already in user list
         if(userList!=null){
-        for (User user : userList) {
-            if(user.getEmail().equals(email.toLowerCase())){
-                return false;
-            }    
-        }
+            for (User user : userList) {
+                if(user.getEmail().equals(email.toLowerCase())){
+                    return false;
+                }    
+            }
         }
         // check if email is valid
         //String emailRegex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-_]+.[a-zA-Z0-9+-._]+$";
