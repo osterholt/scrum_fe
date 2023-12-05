@@ -70,6 +70,12 @@ public class AppFacade {
         System.exit(0);
     }
 
+    public void removeActive() {
+        activeUser = null;
+        activeCompany = null;
+        activeBoard = null;
+    }
+
     public Company getActiveCompany() {
         return activeCompany;
     }

@@ -37,6 +37,7 @@ public class CompanyManager {
     }
     companies.add(company);
     AppFacade.getInstance().setActiveCompany(company);
+    AppFacade.getInstance().getActiveUser().addCompany(company);
     return true;
   }
 
