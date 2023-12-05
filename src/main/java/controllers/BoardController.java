@@ -11,9 +11,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 public class BoardController implements Initializable {
@@ -26,12 +26,11 @@ public class BoardController implements Initializable {
     private Text welcomeText;
 
     @FXML
-    private Label welcomeLabel;
+    private GridPane gridPane;
 
     private boolean setWelcomeText(String firstName, String lastName) {
         if(firstName != null && lastName != null) {
             welcomeText.setText("Welcome: " + firstName + " " + lastName);
-            welcomeLabel.setText("Welcome: " + firstName + " " + lastName);
         }
         return firstName != null && lastName != null;
     }
@@ -43,11 +42,6 @@ public class BoardController implements Initializable {
         // System.out.println(companyChoices);
     }
 
-    @FXML
-    void displayCompanies(ContextMenuEvent event) {
-        System.out.println("Display Companies Pressed");
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO Auto-generated method stub
@@ -57,15 +51,15 @@ public class BoardController implements Initializable {
         setDropdown();
     }
     private void setDropdown() {
-        double x = welcomeLabel.getLayoutX();
-        x += (welcomeLabel.getWidth() + DROPDOWN_X_OFFSET); //FIXME: width is set to default 0??
-        double y = welcomeLabel.getLayoutY();
-        y += (welcomeLabel.getHeight() / 2);
+        // double x = welcomeLabel.getLayoutX();
+        // x += (welcomeLabel.getWidth() + DROPDOWN_X_OFFSET); //FIXME: width is set to default 0??
+        // double y = welcomeLabel.getLayoutY();
+        // y += (welcomeLabel.getHeight() / 2);
 
-        System.out.println("DEBUG: companyChoices set location: (" + x + ", " + y + ")");
-        companyChoices.setLayoutX(x);
-        companyChoices.setLayoutY(y);
-        System.out.println("DEBUG: companyChoices measured location: (" + companyChoices.getLayoutX() + ", " + companyChoices.getLayoutY() + ")");
+        // System.out.println("DEBUG: companyChoices set location: (" + x + ", " + y + ")");
+        // companyChoices.setLayoutX(x);
+        // companyChoices.setLayoutY(y);
+        // System.out.println("DEBUG: companyChoices measured location: (" + companyChoices.getLayoutX() + ", " + companyChoices.getLayoutY() + ")");
 
         // Add initial items to the ChoiceBox
         ObservableList<String> items = FXCollections.observableArrayList();
@@ -75,6 +69,11 @@ public class BoardController implements Initializable {
         }
         items.add("DEBUG: DEFAULT");
         companyChoices.setItems(items);
+        companyChoices.onActionProperty();
+    }
+    @FXML
+    void goHome(MouseEvent event) {
+
     }
 
 }
