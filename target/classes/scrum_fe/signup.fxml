@@ -16,7 +16,22 @@
             <Font name="SansSerif Regular" size="36.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="545.0" layoutY="144.0" prefHeight="50.0" prefWidth="200.0" text="Scrum Board" textAlignment="CENTER" styleClass="unique">
+      <Button fx:id="backToWelcome" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#backToWelcome" prefHeight="25.0" prefWidth="100.0" styleClass="styles.css" text="Back">
+         <font>
+            <Font name="SansSerif Regular" size="20.0" />
+         </font>
+      </Button>
+      <Label id="errorLabelInvalid" fx:id="errorLabelInvalid" alignment="CENTER" layoutX="547.0" layoutY="350.0" prefHeight="48.0" prefWidth="340.0" text="Invalid email or password. Try again." textAlignment="CENTER" textFill="RED" visible = "FALSE">
+         <font>
+            <Font name="SansSerif Regular" size="15.0"/>
+         </font>
+      </Label>
+      <Label id="errorLabelAlreadyExists" fx:id="errorLabelAlreadyExists" alignment="CENTER" layoutX="547.0" layoutY="350.0" prefHeight="48.0" prefWidth="340.0" text="You're already in our system, please login." textAlignment="CENTER" textFill="RED" visible = "FALSE">
+         <font>
+            <Font name="SansSerif Regular" size="15.0"/>
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="620.0" layoutY="144.0" prefHeight="50.0" prefWidth="200.0" text="Scrum Board" textAlignment="CENTER">
          <font>
             <Font name="SansSerif Regular" size="30.0" />
          </font>

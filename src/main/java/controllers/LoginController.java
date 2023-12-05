@@ -9,6 +9,7 @@ import java.util.UUID;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class LoginController {
@@ -21,6 +22,20 @@ public class LoginController {
 
     @FXML
     private Button login;
+
+    @FXML
+    private Button backToWelcome;
+
+    @FXML
+    private Label errorLabel; 
+
+    @FXML
+    void backToWelcome(ActionEvent event) throws IOException {
+        errorLabel.setVisible(false);
+        System.out.println("DEBUG: Back button pressed!");
+        App.setRoot("welcome");
+    }
+
 
     @FXML
     void login(ActionEvent event) throws IOException {
@@ -38,6 +53,10 @@ public class LoginController {
             // BoardController.setWelcomeText(user.getFirstName(), user.getLastName());
             //Set Companies!
             App.setRoot("board");
+        } else {
+            // User is null, show the error label
+            System.out.println("DEBUG: Log in Failed!!");
+            errorLabel.setVisible(true);
         }
         
     }
