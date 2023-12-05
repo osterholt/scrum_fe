@@ -33,6 +33,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Button layoutX="1305.0" layoutY="37.0" mnemonicParsing="false" text="Pick Company" />
+      <Button fx:id="pickCompany" layoutX="1305.0" layoutY="37.0" mnemonicParsing="false" onKeyPressed="#showCompanies" text="Pick Company" />
    </children>
 </AnchorPane>
