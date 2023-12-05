@@ -81,69 +81,55 @@ public class Company {
     }
 
     public boolean addUser(User user){
-        if(user!=null){
-            users.add(user);
-            return true;
+        if(user == null || users.contains(user))
+            return false;
+        return users.add(user);
+    }
+    
+    public boolean removeUser(User user){
+        if(user == null || users.size() <= 1)
+            return false;
+        return users.remove(user);
+    }
+    
+    public boolean addBoard(Board board){
+        if(board == null || boards.contains(board) || checkBoardName(board))
+            return false;
+        return boards.add(board);
+    }
+
+    private boolean checkBoardName(Board board) {
+        for(int i = 0; i < boards.size(); i++) {
+            if(boards.get(i).getTitle() == board.getTitle())
+                return true;
         }
         return false;
     }
     
-    public boolean removeUser(User user){
-        if(user==null){
-            return false;
-        }
-        for(int i = 0; i<users.size(); i++){
-            if(users.get(i).equals(user)){
-                users.remove(i);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean addBoard(Board board){
-        if(board!=null){
-            boards.add(board);
-            return true;
-        }
-        return false;
-    }
-
     public boolean removeBoard(Board board){
-        for(int i = 0; i<boards.size(); i++){
-            if(boards.get(i).equals(board)){
-                boards.remove(i);
-                return true;
-            }
-        }
-        return false;
+        if(boards.size() <= 1)
+            return false;
+        return boards.remove(board);
     }
 
     public boolean addAdmin(User user){
-         if(user!=null){
-            admins.add(user);
-            return true;
-        }
-        return false;
+        if(user == null || admins.contains(user))
+            return false;
+        // if you're adding an admin, they're by nature a user in the system as well
+        if(!users.contains(user))
+            users.add(user);
+        return admins.add(user);
     }
-
+    
     public boolean removeAdmin(User user){
-        for(int i = 0; i<admins.size(); i++){
-            if(admins.get(i).equals(user)){
-                admins.remove(i);
-                return true;
-            }
-        }
-        return false;
+        // don't want to remove the only admin
+        if(admins.size() <= 1)
+            return false;
+        return admins.remove(user);
     }
-
+    
     public boolean isAdmin(User user){
-        for(int i = 0; i<admins.size(); i++){
-            if(admins.get(i).equals(user)){
-                return true;
-            }
-        }
-        return false;
+        return admins.contains(user);
     }
 
     public boolean equals(Company company) {
