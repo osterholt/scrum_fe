@@ -102,6 +102,14 @@ public class LoginManager {
         return null;
     }
 
+    public User getUser(String email) {
+        for(User user : userList) {
+            if(user.getEmail().equals(email))
+                return user;
+        }
+        return null;
+    }
+
     public void printUsers() {
         System.out.println("");
         if(userList == null){
