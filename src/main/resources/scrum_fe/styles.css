@@ -1,0 +1,20 @@
+.root {
+    -fx-base: #87C7D1;
+    -fx-background: #1B3161;
+}
+.button {
+    -fx-background-color: #72B1AC;
+    -fx-text-fill: white;
+    -fx-border-color:#024FBC;
+    /* -fx-border-width: 2 px;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 200px; */
+    -fx-display: inline-block;
+}
+
+.unique {
+    -fx-background-color: #1B3161;
+    -fx-text-fill: #DA9055;
+    /* -fx-font-size: 24pt; */
+    -fx-font-family: "Helvetica"
+}
