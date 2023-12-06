@@ -6,12 +6,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -42,6 +45,11 @@ public class BoardController implements Initializable {
         // System.out.println(companyChoices);
     }
 
+    @FXML
+    void showCompanies(KeyEvent event) {
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO Auto-generated method stub
@@ -69,6 +77,13 @@ public class BoardController implements Initializable {
         }
         items.add("DEBUG: DEFAULT");
         companyChoices.setItems(items);
+        companyChoices.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                // TODO Auto-generated method stub
+                System.out.println("Choicebox Selection: " + items.get(newValue.intValue()));
+            }
+        });
         companyChoices.onActionProperty();
     }
     @FXML
