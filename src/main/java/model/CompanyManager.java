@@ -12,7 +12,9 @@ public class CompanyManager {
   private static ArrayList<Company> companies;
 
   private CompanyManager() {
-    companies = new ArrayList<Company>();
+    companies = DataWriter.getCompanies();
+    if (companies == null)
+      companies = new ArrayList<Company>();
   }
   /**
    * retrieves the singleton instance of the CompanyManager class
