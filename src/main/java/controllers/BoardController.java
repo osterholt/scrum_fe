@@ -24,6 +24,7 @@ public class BoardController implements Initializable {
 
     @FXML
     private ChoiceBox<String> companyChoices;
+    // Consider replacing with title pane
 
     @FXML
     private Text welcomeText;
@@ -43,11 +44,6 @@ public class BoardController implements Initializable {
         companyChoices.show();
         System.out.println("Display Boards Pressed");
         // System.out.println(companyChoices);
-    }
-
-    @FXML
-    void showCompanies(KeyEvent event) {
-
     }
 
     @Override
@@ -72,7 +68,9 @@ public class BoardController implements Initializable {
         // Add initial items to the ChoiceBox
         ObservableList<String> items = FXCollections.observableArrayList();
         ArrayList<Company> companies = AppFacade.getInstance().getActiveUser().getCompanies();
+        System.out.println("DEBUG: activeUser.getCompanies:");
         for(Company company : companies) {
+            System.out.println(company.getName());
             items.add(company.getName());
         }
         items.add("DEBUG: DEFAULT");
@@ -80,15 +78,13 @@ public class BoardController implements Initializable {
         companyChoices.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                // TODO Auto-generated method stub
-                System.out.println("Choicebox Selection: " + items.get(newValue.intValue()));
+                String companyStr = items.get(newValue.intValue());
+                System.out.println("Choicebox Selection: " + companyStr);
+                AppFacade.getInstance().setActiveCompany(companyStr);
+                System.out.println("DEBUG: ACTIVE COMPANY: " + AppFacade.getInstance().getActiveCompany());
             }
         });
         companyChoices.onActionProperty();
-    }
-    @FXML
-    void goHome(MouseEvent event) {
-
     }
 
 }
