@@ -31,22 +31,22 @@
             <Font name="SansSerif Regular" size="15.0"/>
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="545.0" layoutY="144.0" prefHeight="50.0" prefWidth="200.0" text="Scrum Board" textAlignment="CENTER" styleClass="unique">
+      <Label alignment="CENTER" layoutX="545.0" layoutY="144.0" prefHeight="50.0" text="Scrum Board" textAlignment="CENTER" styleClass="unique">
          <font>
             <Font name="SansSerif Regular" size="30.0" />
          </font>
       </Label>
-      <TextField id="fullName" fx:id="fullName" layoutX="470.0" layoutY="400.0" prefHeight="60.0" prefWidth="500.0" promptText="Full Name" styleClass="styles.css">
+      <TextField id="fullName" fx:id="fullName" layoutX="470.0" layoutY="400.0" prefHeight="60.0" prefWidth="500.0" promptText="Full Name" styleClass="text">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField id="fullName" fx:id="email" layoutX="470.0" layoutY="475.0" prefHeight="60.0" prefWidth="500.0" promptText="Email" styleClass="styles.css">
+      <TextField id="fullName" fx:id="email" layoutX="470.0" layoutY="475.0" prefHeight="60.0" prefWidth="500.0" promptText="Email" styleClass="text">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField id="fullName" fx:id="password" layoutX="470.0" layoutY="550.0" prefHeight="60.0" prefWidth="500.0" promptText="Password" styleClass="styles.css">
+      <TextField id="fullName" fx:id="password" layoutX="470.0" layoutY="550.0" prefHeight="60.0" prefWidth="500.0" promptText="Password" styleClass="text">
          <font>
             <Font size="30.0" />
          </font>
