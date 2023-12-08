@@ -21,6 +21,8 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 
 public class ColumnsController implements Initializable {
+    //ideally all this code works, but i couldn't test it with the funcitonality of the app without
+    // the boards screen before it being done, and that couldn't be finished until the JSON was fixed :/
     @FXML
     private Text boardName;
 
@@ -60,15 +62,20 @@ public class ColumnsController implements Initializable {
         colTitle.setText(column.getTitle());
         vbox.getChildren().add(colTitle);
         // button to add task to column below title
-        /*Button addTask = new Button();
+        Button addTask = new Button();
         addTask.setText("Add Task");
         addTask.setOnAction(e -> {
-
+            //TODO: add functionality to create a new task object within the vbox (column)
+            // will likely be a new screen, but maybe a popup would work? it would definitely be cleaner, but idk how to do that rn haha
         });
-        vbox.getChildren().add(addTask);*/
-        // populate column with buttons for every task in that column
+        vbox.getChildren().add(addTask);
+        // populate column with label for every task in that column
         ArrayList<Task> tasks = column.getTasks();
         for(Task task : tasks) {
+            //TODO: right now, I just have a label to click what i would imagine would pull up a screen with all the task info
+            // portia mentioned using a pane instead earlier today in class, but I haven't been able to figure out which kind of pane to use
+            // I think it would be cool to use a pane with some information, and when you click it have a pop up with all the extra information show up
+            // or maybe when hovering over it, but like I said above, couldn't figure it out at the moment
             Label taskLabel = new Label();
             taskLabel.setText(task.getName());
             taskLabel.setId(task.getName() + "_label");
@@ -78,6 +85,6 @@ public class ColumnsController implements Initializable {
 
     @FXML
     public void addNewColumn(ActionEvent event) throws IOException {
-
+        //TODO: same as add task above, but with a column. volumns are VBoxes
     }
 }
