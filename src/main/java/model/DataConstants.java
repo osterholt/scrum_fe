@@ -36,7 +36,6 @@ public abstract class DataConstants {
     protected static final String COMMENT_COMMENTS = "comments";
     protected static final String BOARD_TITLE = "title";
     protected static final String BOARD_DESCRIPTION = "description";
-    protected static final String BOARD_COMMENTS = "comments";
     protected static final String BOARD_COLUMNS = "columns";
     protected static final String BOARD_PRIVATE = "private";
     protected static final String BOARD_SCRUM_MASTER = "scrumMaster";

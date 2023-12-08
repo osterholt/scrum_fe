@@ -104,6 +104,12 @@ public class Board {
         else
             return false;
     }
+    
+    public boolean addDev(User user) {
+        if(developers.contains(user) || user == null)
+            return false;
+        return developers.add(user);
+    }
 
     private boolean isDev() {
         for(User dev : this.developers) {
@@ -235,9 +241,12 @@ public class Board {
             return null;
         }
     }
-    public void setProductOwner(User productOwner) {
-        if(canEdit() && productOwner != null)
+    public boolean setProductOwner(User productOwner) {
+        if(canEdit() && productOwner != null) {
             this.productOwner = productOwner;
+            return true;
+        }
+        return false;
     }
     public ArrayList<User> getDevelopers() {
         return developers;
@@ -255,7 +264,7 @@ public class Board {
             toReturn += "\n  Scrum Master: null";
         }
         try {
-            toReturn += "\n  Product Ownet: " + productOwner.getFirstName() + " " + productOwner.getLastName();
+            toReturn += "\n  Product Owner: " + productOwner.getFirstName() + " " + productOwner.getLastName();
         } catch (Exception e) {
             toReturn += "\n  Product Owner: null";
         }

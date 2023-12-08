@@ -163,21 +163,56 @@ public class DataWriter extends DataConstants{
                 JSONObject company_JSON = (JSONObject)companyJSON.get(i);
                 UUID id = UUID.fromString((String)company_JSON.get(COMPANY_ID));
                 String companyName = (String)company_JSON.get(COMPANY_NAME);
-                Company newCompany = new Company(companyName);
+                Company newCompany = new Company(companyName, id);
                 JSONArray userIDs = (JSONArray)company_JSON.get(COMPANY_USERS);
-                JSONArray boardIDs = (JSONArray)company_JSON.get(COMPANY_BOARDS);
+                JSONArray boards = (JSONArray)company_JSON.get(COMPANY_BOARDS);
                 JSONArray adminIDs = (JSONArray)company_JSON.get(COMPANY_ADMINS);
                 for (Object userID : userIDs) {
                     newCompany.addUser(LoginManager.getInstance().getUser(UUID.fromString((String)userID)));
                 }
-                /*for (Object boardID : boardIDs) {
-                    for(Company company : CompanyManager.getInstance().getCompanies()) {
-                        newCompany.add //TODO: addBoard
+                for (Object board : boards) {
+                    JSONObject company_board = (JSONObject) board;
+                    String boardTitle = (String)company_board.get(BOARD_TITLE);
+                    String boardDescription = (String)company_board.get(BOARD_DESCRIPTION);
+                    boolean boardPrivate = (boolean)company_board.get(BOARD_PRIVATE);
+                    Board newBoard = new Board(boardTitle, boardDescription, boardPrivate);
+                    UUID boardScrumMasterID = UUID.fromString((String)company_board.get(BOARD_SCRUM_MASTER));
+                    User boardScrumMaster = LoginManager.getInstance().getUser(boardScrumMasterID);
+                    newBoard.setScrumMaster(boardScrumMaster);
+                    UUID boardProductOwnerID = UUID.fromString((String)company_board.get(BOARD_PRODUCT_OWNER));
+                    User boardProductOwner = LoginManager.getInstance().getUser(boardProductOwnerID);
+                    newBoard.setProductOwner(boardProductOwner);
+                    JSONArray columnsJSON = (JSONArray)company_board.get(BOARD_COLUMNS);
+                    for (Object columnJSON : columnsJSON) {
+                        JSONObject column = (JSONObject) columnJSON;
+                        String columnTitle = (String)column.get(COLUMN_TITLE);
+                        String columnDesc = (String)column.get(COLUMN_DESCRIPTION);
+                        Column newCol = new Column(columnTitle, columnDesc);
+                        JSONArray columnTaskIDs = (JSONArray)column.get(COLUMN_TASKS);
+                        // get ArrayList of tasks from JSON
+                        ArrayList<Task> tasks = getTasks();
+                        // iterate through taskIDs for column tasks
+                        for (Object taskID : columnTaskIDs) {
+                            // iterate through ArrayList of tasks from JSON
+                            for (Task task : tasks) {
+                                // if tasks have the same ID, add task to the column
+                                if(task.getID().equals(taskID))
+                                    newCol.addTask(task);
+                            }
+                        }
+                        newBoard.addColumn(newCol);
                     }
-                }*/
+                    JSONArray developers = (JSONArray)company_board.get(BOARD_DEVELOPERS);
+                    for (Object developerID : developers) {
+                        User developer = LoginManager.getInstance().getUser(UUID.fromString((String)developerID));
+                        newBoard.addDev(developer);
+                    }
+                    newCompany.addBoard(newBoard);
+                }
                 for (Object adminID : adminIDs) {
                     newCompany.addAdmin(LoginManager.getInstance().getUser(UUID.fromString((String)adminID)));
                 }
+                companies.add(newCompany);
             }   
             return companies;
         } catch(Exception e) {
@@ -205,7 +240,7 @@ public class DataWriter extends DataConstants{
                 Category category = Category.valueOf((String)taskJSON.get(TASK_CATEGORY));
                 boolean resolved = (boolean)taskJSON.get(TASK_RESOLVED);
                 String dateString = (String) taskJSON.get(TASK_DATE);
-                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
+                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
                 LocalDateTime date = LocalDateTime.parse(dateString, dateFormatter);
                 tasks.add(new Task(id, name, description, date, author, assignee, category, resolved, priority, timeRequired));
             }
@@ -267,6 +302,14 @@ public class DataWriter extends DataConstants{
             columns.add(getColumnObject(column));
         }
         boardDetails.put(BOARD_COLUMNS, columns);
+        boardDetails.put(BOARD_PRODUCT_OWNER, board.getProductOwner().getId().toString());
+        boardDetails.put(BOARD_SCRUM_MASTER, board.getScrumMaster().getId().toString());
+        boardDetails.put(BOARD_PRIVATE, board.getPermissions());
+        JSONArray developers = new JSONArray();
+        for (User dev : board.getDevelopers()) {
+            developers.add(dev.getId().toString());
+        }
+        boardDetails.put(BOARD_DEVELOPERS, developers);
         return boardDetails;
         
     }
@@ -307,6 +350,9 @@ public class DataWriter extends DataConstants{
     AppFacade.getInstance().login("jdietrich@gmail.com", "password1");
         User user1 = new User("John", "L", "jl@email.com", "password11");
         User user2 = new User("Sherry", "begay", "shb@email.com", "password12");
+        LoginManager.getInstance().addUser(user1);
+        LoginManager.getInstance().addUser(user2);
+        DataWriter.saveUsers();
         Category cat =Category.FRONTEND;
         Task t1 = new Task(UUID.randomUUID(), "taskname", "taskdescription", LocalDateTime.now(), user1, user2, cat, false, 1, 1);
         Task t2 = new Task(UUID.randomUUID(), "taskname2", "taskdescription2", LocalDateTime.now(), user1, user2, cat, false, 1, 1);
@@ -319,12 +365,19 @@ public class DataWriter extends DataConstants{
         users.add(user2);
         board.getColumn("Todo").addTask(t1);
         board.getColumn("Todo").addTask(t2);
+        board.setScrumMaster(user2);
+        board.setProductOwner(user1);
+        System.out.println(board.getProductOwner());
         Company company = new Company("Test Company", user1, users, UUID.randomUUID());
         company.addBoard(board);
         CompanyManager companyManager = CompanyManager.getInstance();
         companyManager.addCompany(company);
-        DataWriter.saveTasks();
-        System.out.println(DataWriter.getTasks().get(0).getName());
+        System.out.println(companyManager.getCompanies());
+        //DataWriter.saveTasks();
+        //System.out.println(DataWriter.getTasks().get(0).getName());
+        DataWriter.saveCompanies();
+        ArrayList<Company> companies = DataWriter.getCompanies();
+        System.out.println(companies);
     //     Company company = new Company("Test Company", user1, users, UUID.randomUUID());
         
     //     company.addBoard(board);
