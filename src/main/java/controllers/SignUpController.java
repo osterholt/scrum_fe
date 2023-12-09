@@ -48,6 +48,7 @@ public class SignUpController {
     void signUp(ActionEvent event) throws IOException {
         String[] fullNameArr = fullName.getText().split(SPACE);
         String emailStr = email.getText();
+        //System.out.println(emailStr);
         String passwordStr = password.getText();
 
         if(LoginManager.getInstance().checkEmail(emailStr) && LoginManager.getInstance().checkPassword(passwordStr) && fullNameArr.length > 1) {

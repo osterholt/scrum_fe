@@ -31,6 +31,9 @@ public class Company {
         setUUID(id);
         setName(aName);
         this.users = users;
+        for(User user : users){
+            user.addCompany(this);
+        }
         addAdmin(self);
     }
 
@@ -83,12 +86,16 @@ public class Company {
     public boolean addUser(User user){
         if(user == null || users.contains(user))
             return false;
-        return users.add(user);
+            
+            user.addCompany(this);
+            
+            return users.add(user);
     }
     
     public boolean removeUser(User user){
         if(user == null || users.size() <= 1)
             return false;
+            
         return users.remove(user);
     }
     
