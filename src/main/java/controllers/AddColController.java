@@ -11,13 +11,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.TilePane;
 import javafx.scene.Parent;
 
-public class TaskController {
+public class AddColController {
 
     @FXML
     private Button createTask;
 
     @FXML
-    void createTask(ActionEvent event) throws IOException {
+    void createColumn(ActionEvent event) throws IOException {
       
       //try {
         /* 
@@ -30,7 +30,7 @@ public class TaskController {
         //e.printStackTrace();
       //}
 
-      App.setRoot("columns3");
+      App.setRoot("columns2");
     }
 
 }

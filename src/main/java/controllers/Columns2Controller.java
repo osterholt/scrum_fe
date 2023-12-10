@@ -21,7 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.scene.layout.TilePane;
 
-public class ColumnsController implements Initializable {
+public class Columns2Controller implements Initializable {
     @FXML
     private Button addTasks;
 
@@ -94,8 +94,8 @@ public class ColumnsController implements Initializable {
     @FXML
     private VBox todoCol;
     
-    //@FXML
-    //private VBox doingCol;
+    @FXML
+    private VBox doingCol;
 
     @FXML
     private VBox abandonedCol;
@@ -156,7 +156,7 @@ public class ColumnsController implements Initializable {
 
     @FXML
     void pushright3(ActionEvent action) throws IOException {
-        //doingCol.getChildren().remove(burger1);
+        doingCol.getChildren().remove(burger1);
         burger2.setVisible(true);
     }
 

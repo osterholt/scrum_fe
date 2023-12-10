@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1459.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ColumnsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1459.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Columns_TextController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c0390" height="100.0" stroke="BLACK" strokeType="INSIDE" width="1459.0" />
       <Text fx:id="boardName" fill="WHITE" layoutX="86.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Missiles">
@@ -66,8 +66,7 @@
                         </Text>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff:  Not cylindrical enough." wrappingWidth="325.0" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: What's a cylinder" wrappingWidth="325.0" />
-                        <TextField fx:id="textfield" maxWidth="350.0" minHeight="20.0" minWidth="200.0" onAction="#textEntry" prefWidth="0.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: How about you do it Jeff?" wrappingWidth="324.76513671875" />
                         <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
                            <items>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
@@ -148,9 +147,9 @@
                   </TilePane>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" spacing="7.0">
+            <VBox fx:id="doingCol" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" spacing="7.0">
                <children>
-                  <Label fx:id="doingCol" alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Doing" textAlignment="CENTER">
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Doing" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -241,8 +240,7 @@
                         </Text>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff:  Not cylindrical enough." wrappingWidth="325.0" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: What's a cylinder" wrappingWidth="325.0" />
-                        <TextField maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus:  How about you do it Jeff?" wrappingWidth="325.43115234375" />
                         <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
                            <items>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
@@ -408,7 +406,7 @@
                </children>
             </VBox>
          </children></HBox>
-      <Button fx:id="createColumn" layoutX="1324.0" layoutY="106.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text="Create Column" />
+      <Button fx:id="createColumn" layoutX="1324.0" layoutY="106.0" mnemonicParsing="false" onAction="#columnButton" prefHeight="30.0" prefWidth="115.0" text="Create Column" />
    </children>
    <stylesheets>
       <URL value="@styles.css" />
