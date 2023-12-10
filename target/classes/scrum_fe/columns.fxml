@@ -35,8 +35,8 @@
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
-                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                  <Button fx:id="addTasks" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
+                  <TilePane fx:id="curve1" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Curve Cylinder" textAlignment="CENTER" wrappingWidth="350.21630859375">
                            <cursor>
@@ -81,7 +81,7 @@
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
                                  <children>
-                                    <Button fx:id="rightbutton1" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                    <Button fx:id="rightbutton1" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" onAction="#pushright1" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>
@@ -92,7 +92,7 @@
                         </SplitPane>
                      </children>
                   </TilePane>
-                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                  <TilePane fx:id="init" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Super Algorithm Initialization" textAlignment="CENTER" wrappingWidth="350.21630859375">
                            <cursor>
@@ -156,7 +156,7 @@
                      </font>
                   </Label>
                   <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
-                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                  <TilePane fx:id="burger1" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Impossible Burger Possible" textAlignment="CENTER" wrappingWidth="350.21630859375">
                            <cursor>
@@ -200,7 +200,7 @@
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
                                  <children>
-                                    <Button fx:id="rightbutton3" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                    <Button fx:id="rightbutton3" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" onAction="#pushright3" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>
@@ -211,7 +211,7 @@
                         </SplitPane>
                      </children>
                   </TilePane>
-                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                  <TilePane fx:id="curve2" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0" visible="false">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Curve Cylinder" textAlignment="CENTER" wrappingWidth="350.21630859375">
                            <cursor>
@@ -277,7 +277,7 @@
                      </font>
                   </Label>
                   <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
-                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                  <TilePane fx:id="burger2" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0" visible="false">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Impossible Burger Possible" textAlignment="CENTER" wrappingWidth="350.21630859375">
                            <cursor>
@@ -321,7 +321,7 @@
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
                                  <children>
-                                    <Button fx:id="rightbutton5" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                    <Button fx:id="rightbutton5" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" onAction="#pushright5" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>
@@ -342,7 +342,7 @@
                      </font>
                   </Label>
                   <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
-                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                  <TilePane fx:id="burger3" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0" visible="false">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Impossible Burger Possible" textAlignment="CENTER" wrappingWidth="350.21630859375">
                            <cursor>
