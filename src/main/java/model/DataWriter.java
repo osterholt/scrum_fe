@@ -141,7 +141,6 @@ public class DataWriter extends DataConstants{
                 JSONArray companyIDs = (JSONArray)personJSON.get(USER_COMPANIES);
                 User newUser = new User(id, firstName, lastName, email, password, role);
                 for (Object companyID : companyIDs) {
-                    System.out.println("COMPANY MANAGER COMPANIES: " + CompanyManager.getInstance().getCompanies());
                     newUser.addCompany(CompanyManager.getInstance().getCompany(UUID.fromString((String)companyID)));
                 }
                 users.add(newUser);
@@ -172,7 +171,6 @@ public class DataWriter extends DataConstants{
                 for (Object userID : userIDs) {
                     newCompany.addUser(LoginManager.getInstance().getUser(UUID.fromString((String)userID)));
                 }
-                System.out.println(newCompany);
                 for (Object board : boards) {
                     JSONObject company_board = (JSONObject) board;
                     String boardTitle = (String)company_board.get(BOARD_TITLE);
