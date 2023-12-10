@@ -142,7 +142,20 @@ public class ColumnsController implements Initializable {
     }
 
     @FXML
-    public void addNewColumn(ActionEvent event) throws IOException {
-       
+    void pushright1(ActionEvent action) throws IOException{
+        curve1.setVisible(false);
+        curve2.setVisible(true);
+    }
+
+    @FXML
+    void pushright3(ActionEvent action) throws IOException {
+        burger1.setVisible(false);
+        burger2.setVisible(true);
+    }
+
+    @FXML
+    void pushright5(ActionEvent action) throws IOException {
+        burger2.setVisible(false);
+        burger3.setVisible(true);
     }
 }
