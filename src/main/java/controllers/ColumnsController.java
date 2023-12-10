@@ -22,8 +22,6 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.TilePane;
 
 public class ColumnsController implements Initializable {
-    //ideally all this code works, but i couldn't test it with the funcitonality of the app without
-    // the boards screen before it being done, and that couldn't be finished until the JSON was fixed :/
     @FXML
     private Button addTasks;
 
@@ -157,5 +155,14 @@ public class ColumnsController implements Initializable {
     void pushright5(ActionEvent action) throws IOException {
         burger2.setVisible(false);
         burger3.setVisible(true);
+    }
+
+    public TilePane getInitTilePane() {
+        return init;
+    }
+
+    @FXML
+    void taskButton(ActionEvent action) throws IOException {
+        App.setRoot("task");
     }
 }

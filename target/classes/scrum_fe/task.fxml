@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1459.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TaskController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c0390" height="100.0" stroke="BLACK" strokeType="INSIDE" width="1459.0" />
+      <Text fill="WHITE" layoutX="86.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Task">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <TextField layoutX="200.0" layoutY="177.0" prefHeight="26.0" prefWidth="375.0" />
+      <TextField layoutX="200.0" layoutY="275.0" prefHeight="26.0" prefWidth="375.0" />
+      <TextArea layoutX="884.0" layoutY="175.0" prefHeight="334.0" prefWidth="375.0" />
+      <Text fill="WHITE" layoutX="200.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Title:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="884.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Description:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="200.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Assignee:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="200.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Column:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextField layoutX="200.0" layoutY="375.0" prefHeight="26.0" prefWidth="375.0" />
+      <Button fx:id="createTask" layoutX="600.0" layoutY="632.0" mnemonicParsing="false" onAction="#createTask" prefHeight="52.0" prefWidth="252.0" text="Create Task">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
+</AnchorPane>
