@@ -60,7 +60,7 @@ public class SignUpController {
             System.out.println("Active User: " + AppFacade.getInstance().getActiveUser());
             // BoardController.setWelcomeText(user.getFirstName(), user.getLastName());
             //Set Companies!
-            App.setRoot("board");
+            App.setRoot("columns");
             
         }
         else {

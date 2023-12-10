@@ -12,18 +12,26 @@ public class CompanyManager {
   private static ArrayList<Company> companies;
 
   private CompanyManager() {
-    companies = DataWriter.getCompanies();
-    if (companies == null)
-      companies = new ArrayList<Company>();
+    companies = new ArrayList<Company>();
   }
   /**
    * retrieves the singleton instance of the CompanyManager class
    * @return CompanyManager instance
    */
   public static CompanyManager getInstance() {
-    if(companyManager == null)
+    if(companyManager == null) {
       companyManager = new CompanyManager();
+      companyManager.loadData();
+    }
     return companyManager;
+  }
+  
+  private void loadData() {
+    System.out.println("In company manager load data");
+    companies = DataWriter.getCompanies();
+    System.out.println(companies);
+    if(companies == null)
+      companies = new ArrayList<Company>();
   }
 
   /**

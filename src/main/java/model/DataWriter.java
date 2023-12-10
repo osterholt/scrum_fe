@@ -112,6 +112,7 @@ public class DataWriter extends DataConstants{
 
         JSONArray boardList = new JSONArray();
         for (Board board : company.getBoards()) {
+            System.out.println(board.getTitle());
             boardList.add(getBoardObject(board));
             
         }
@@ -140,6 +141,7 @@ public class DataWriter extends DataConstants{
                 JSONArray companyIDs = (JSONArray)personJSON.get(USER_COMPANIES);
                 User newUser = new User(id, firstName, lastName, email, password, role);
                 for (Object companyID : companyIDs) {
+                    System.out.println("COMPANY MANAGER COMPANIES: " + CompanyManager.getInstance().getCompanies());
                     newUser.addCompany(CompanyManager.getInstance().getCompany(UUID.fromString((String)companyID)));
                 }
                 users.add(newUser);
@@ -170,6 +172,7 @@ public class DataWriter extends DataConstants{
                 for (Object userID : userIDs) {
                     newCompany.addUser(LoginManager.getInstance().getUser(UUID.fromString((String)userID)));
                 }
+                System.out.println(newCompany);
                 for (Object board : boards) {
                     JSONObject company_board = (JSONObject) board;
                     String boardTitle = (String)company_board.get(BOARD_TITLE);
@@ -196,7 +199,7 @@ public class DataWriter extends DataConstants{
                             // iterate through ArrayList of tasks from JSON
                             for (Task task : tasks) {
                                 // if tasks have the same ID, add task to the column
-                                if(task.getID().equals(taskID))
+                                if(task.getID().equals(UUID.fromString((String)taskID)))
                                     newCol.addTask(task);
                             }
                         }
@@ -213,6 +216,7 @@ public class DataWriter extends DataConstants{
                     newCompany.addAdmin(LoginManager.getInstance().getUser(UUID.fromString((String)adminID)));
                 }
                 companies.add(newCompany);
+                System.out.println(newCompany);
             }   
             return companies;
         } catch(Exception e) {
@@ -347,24 +351,28 @@ public class DataWriter extends DataConstants{
     //     users.add(user1); users.add(user2);
     //     board.getColumn("Todo").addTask(t1);
 
-    AppFacade.getInstance().login("jdietrich@gmail.com", "password1");
-        User user1 = new User("John", "L", "jl@email.com", "password11");
+    //AppFacade.getInstance().login("jdietrich@gmail.com", "password1");
+        /*User user1 = new User("John", "L", "jl@email.com", "password11");
         User user2 = new User("Sherry", "begay", "shb@email.com", "password12");
+        User usernew = new User("new", "user", "newuser@gmail.com", "newpassword");
         LoginManager.getInstance().addUser(user1);
         LoginManager.getInstance().addUser(user2);
+        LoginManager.getInstance().addUser(usernew);
         DataWriter.saveUsers();
         Category cat =Category.FRONTEND;
-        Task t1 = new Task(UUID.randomUUID(), "taskname", "taskdescription", LocalDateTime.now(), user1, user2, cat, false, 1, 1);
-        Task t2 = new Task(UUID.randomUUID(), "taskname2", "taskdescription2", LocalDateTime.now(), user1, user2, cat, false, 1, 1);
+        //Task t1 = new Task(UUID.randomUUID(), "taskname", "taskdescription", LocalDateTime.now(), user1, user2, cat, false, 1, 1);
+        //Task t2 = new Task(UUID.randomUUID(), "taskname2", "taskdescription2", LocalDateTime.now(), user1, user2, cat, false, 1, 1);
+        Task tnew = new Task(UUID.randomUUID(), "taskname3", "taskdescription3", LocalDateTime.now(), usernew, user2, cat, false, 1, 1);
         Column column = new Column("Todo", "Tasks that need to be done");
-        column.addTask(t1);
-        column.addTask(t2);
+        //column.addTask(t1);
+        //column.addTask(t2);
         Board board = new Board("Test Board", "description",true);
         ArrayList<User> users = new ArrayList<User>();
         users.add(user1);
         users.add(user2);
-        board.getColumn("Todo").addTask(t1);
-        board.getColumn("Todo").addTask(t2);
+        //board.getColumn("Todo").addTask(t1);
+        //board.getColumn("Todo").addTask(t2);
+        board.getColumn("Todo").addTask(tnew);
         board.setScrumMaster(user2);
         board.setProductOwner(user1);
         System.out.println(board.getProductOwner());
@@ -372,12 +380,12 @@ public class DataWriter extends DataConstants{
         company.addBoard(board);
         CompanyManager companyManager = CompanyManager.getInstance();
         companyManager.addCompany(company);
-        System.out.println(companyManager.getCompanies());
-        //DataWriter.saveTasks();
+        //System.out.println(companyManager.getCompanies());
+        DataWriter.saveTasks();
         //System.out.println(DataWriter.getTasks().get(0).getName());
         DataWriter.saveCompanies();
         ArrayList<Company> companies = DataWriter.getCompanies();
-        System.out.println(companies);
+        System.out.println(companies);*/
     //     Company company = new Company("Test Company", user1, users, UUID.randomUUID());
         
     //     company.addBoard(board);
@@ -406,5 +414,72 @@ public class DataWriter extends DataConstants{
     //     ArrayList<Company> companies = new ArrayList<Company>();
     //     companies.add(company1); companies.add(company2);
     //     JSONArray jsonCompany = new JSONArray();
+
+        // adding scenario to JSON
+        /* 
+        User atticus = new User("Atticus", "Madden", "amadden@gmail.com", "password");
+        User jeff = new User("Jeff", "Goldblum", "jgoldblum@gmail.com", "password");
+        User owner = new User("Jeff", "Bezos", "jbezos@amazon.com", "password");
+        AppFacade.getInstance().setActiveUser(atticus);
+        Company mission = new Company("Code Mission Possible");
+        mission.addAdmin(atticus);
+        mission.addUser(jeff);
+        mission.addUser(owner);
+        System.out.println(mission.getUsers());
+        Board ElectricMissiles = new Board("Electric Missiles", false);
+        Board SoapFreeWashers = new Board("Soap Free Washers", false);
+        Board AirComputers = new Board("Air Computers", false);
+        ElectricMissiles.addDev(atticus);
+        ElectricMissiles.addDev(jeff);
+        ElectricMissiles.addDev(owner);
+        ElectricMissiles.setScrumMaster(atticus);
+        ElectricMissiles.setProductOwner(owner);
+        ElectricMissiles.setDescription("We love missiles!");
+        System.out.println(ElectricMissiles.getProductOwner());
+        SoapFreeWashers.addDev(atticus);
+        SoapFreeWashers.addDev(jeff);
+        SoapFreeWashers.addDev(owner);
+        SoapFreeWashers.setScrumMaster(atticus);
+        SoapFreeWashers.setProductOwner(owner);
+        System.out.println(ElectricMissiles.getProductOwner());
+        SoapFreeWashers.setDescription("Washing things without buying soap is cool!");
+        AirComputers.addDev(atticus);
+        AirComputers.addDev(jeff);
+        AirComputers.addDev(owner);
+        AirComputers.setScrumMaster(atticus);
+        AirComputers.setProductOwner(owner);
+        System.out.println(AirComputers.getProductOwner());
+        AirComputers.setDescription("Computers that run on air power!");
+        mission.addBoard(AirComputers);
+        mission.addBoard(ElectricMissiles);
+        mission.addBoard(SoapFreeWashers);
+        Task curve = new Task("Curve metal to make a cylindrical shape");
+        curve.setAssignee(jeff);
+        curve.setDescription("");
+        curve.setCategory(Category.SOLO_PROJECT);
+        Comment enough = new Comment("Not cylindrical enough");
+        enough.setAuthor(jeff);
+        Comment what = new Comment("What's a cylinder");
+        what.setAuthor(atticus);
+        curve.addComment(enough);
+        curve.addComment(what);
+        Task burger = new Task("Make impossible burger possible");
+        burger.setAssignee(jeff);
+        burger.setDescription("");
+        burger.setCategory(Category.SOLO_PROJECT);
+        ElectricMissiles.getColumn("Todo").addTask(curve);
+        ElectricMissiles.getColumn("Todo").addTask(burger);
+        LoginManager.getInstance().addUser(atticus);
+        LoginManager.getInstance().addUser(jeff);
+        LoginManager.getInstance().addUser(owner);
+        AppFacade.getInstance().setActiveUser(atticus);
+        CompanyManager.getInstance().addCompany(mission);
+        DataWriter.saveTasks();
+        DataWriter.saveCompanies();
+        DataWriter.saveUsers();
+        */
+        AppFacade.getInstance().login("amadden@gmail.com", "password");
+        System.out.println(AppFacade.getInstance().getActiveUser());
+        //System.out.println(DataWriter.getCompanies());
     }
 }

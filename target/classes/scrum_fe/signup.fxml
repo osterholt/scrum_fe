@@ -41,12 +41,12 @@
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField id="email" fx:id="email" layoutX="470.0" layoutY="475.0" prefHeight="60.0" prefWidth="500.0" promptText="Email" styleClass="text">
+      <TextField id="fullName" fx:id="email" layoutX="470.0" layoutY="475.0" prefHeight="60.0" prefWidth="500.0" promptText="Email" styleClass="text">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField id="password" fx:id="password" layoutX="470.0" layoutY="550.0" prefHeight="60.0" prefWidth="500.0" promptText="Password" styleClass="text">
+      <TextField id="fullName" fx:id="password" layoutX="470.0" layoutY="550.0" prefHeight="60.0" prefWidth="500.0" promptText="Password" styleClass="text">
          <font>
             <Font size="30.0" />
          </font>

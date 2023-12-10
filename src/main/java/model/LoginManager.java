@@ -15,13 +15,18 @@ public class LoginManager {
     private static LoginManager loginManager;
 
     public static LoginManager getInstance() {
-        if(loginManager == null) 
+        if(loginManager == null) {
             loginManager = new LoginManager();
+            loginManager.loadData();
+        }
         return loginManager;
     }
 
     private LoginManager() {
-        //TODO: init
+        userList = new ArrayList<User>();
+    }
+
+    private void loadData() {
         userList = DataWriter.getUsers();
         if(userList == null)
             userList = new ArrayList<User>();
