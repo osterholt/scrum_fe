@@ -21,18 +21,17 @@ public class CompanyManager {
   public static CompanyManager getInstance() {
     if(companyManager == null) {
       companyManager = new CompanyManager();
-      companyManager.loadData();
+      //companyManager.loadData();
     }
     return companyManager;
   }
-  
+
   private void loadData() {
-    System.out.println("In company manager load data");
     companies = DataWriter.getCompanies();
-    System.out.println(companies);
-    if(companies == null)
+    if (companies == null)
       companies = new ArrayList<Company>();
   }
+  
 
   /**
    * Checks if Company to be added is present in list and a valid company and

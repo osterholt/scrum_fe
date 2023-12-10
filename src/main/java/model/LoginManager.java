@@ -28,9 +28,9 @@ public class LoginManager {
 
     private void loadData() {
         userList = DataWriter.getUsers();
-        if(userList == null)
-            userList = new ArrayList<User>();
-    }
+        if (userList == null)
+          userList = new ArrayList<User>();
+      }
 
     public boolean checkEmail(String email) {
         if(email == null){

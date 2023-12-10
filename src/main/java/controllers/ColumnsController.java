@@ -19,18 +19,79 @@ import javafx.scene.text.Text;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
+import javafx.scene.layout.TilePane;
 
 public class ColumnsController implements Initializable {
     //ideally all this code works, but i couldn't test it with the funcitonality of the app without
     // the boards screen before it being done, and that couldn't be finished until the JSON was fixed :/
     @FXML
+    private Button addTasks;
+
+    @FXML
     private Text boardName;
+
+    @FXML
+    private TilePane burger1;
+
+    @FXML
+    private TilePane burger2;
+
+    @FXML
+    private TilePane burger3;
 
     @FXML
     private HBox columns;
 
     @FXML
     private Button createColumn;
+
+    @FXML
+    private TilePane curve1;
+
+    @FXML
+    private TilePane curve2;
+
+    @FXML
+    private TilePane init;
+
+    @FXML
+    private Button leftbutton1;
+
+    @FXML
+    private Button leftbutton2;
+
+    @FXML
+    private Button leftbutton3;
+
+    @FXML
+    private Button leftbutton4;
+
+    @FXML
+    private Button leftbutton5;
+
+    @FXML
+    private Button leftbutton6;
+
+    @FXML
+    private Button rightbutton1;
+
+    @FXML
+    private Button rightbutton2;
+
+    @FXML
+    private Button rightbutton3;
+
+    @FXML
+    private Button rightbutton4;
+
+    @FXML
+    private Button rightbutton5;
+
+    @FXML
+    private Button rightbutton6;
+
+    @FXML
+    private TextField textfield;
 
     private boolean setBoardTitle(String title) {
         if(title != null)
@@ -57,25 +118,22 @@ public class ColumnsController implements Initializable {
     private void setUpVBox(VBox vbox, Column column) {
         vbox.setAlignment(Pos.TOP_CENTER);
         vbox.setId(column.getTitle() + "_vbox");
+        vbox.setPrefWidth(350);
         // add column title to top of VBox
         Label colTitle = new Label();
         colTitle.setText(column.getTitle());
+        colTitle.setAlignment(Pos.CENTER);
+        colTitle.setPrefWidth(350);
         vbox.getChildren().add(colTitle);
         // button to add task to column below title
         Button addTask = new Button();
         addTask.setText("Add Task");
         addTask.setOnAction(e -> {
-            //TODO: add functionality to create a new task object within the vbox (column)
-            // will likely be a new screen, but maybe a popup would work? it would definitely be cleaner, but idk how to do that rn haha
         });
         vbox.getChildren().add(addTask);
         // populate column with label for every task in that column
         ArrayList<Task> tasks = column.getTasks();
         for(Task task : tasks) {
-            //TODO: right now, I just have a label to click what i would imagine would pull up a screen with all the task info
-            // portia mentioned using a pane instead earlier today in class, but I haven't been able to figure out which kind of pane to use
-            // I think it would be cool to use a pane with some information, and when you click it have a pop up with all the extra information show up
-            // or maybe when hovering over it, but like I said above, couldn't figure it out at the moment
             Label taskLabel = new Label();
             taskLabel.setText(task.getName());
             taskLabel.setId(task.getName() + "_label");
@@ -85,6 +143,6 @@ public class ColumnsController implements Initializable {
 
     @FXML
     public void addNewColumn(ActionEvent event) throws IOException {
-        //TODO: same as add task above, but with a column. volumns are VBoxes
+       
     }
 }

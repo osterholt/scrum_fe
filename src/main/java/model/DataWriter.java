@@ -214,7 +214,6 @@ public class DataWriter extends DataConstants{
                     newCompany.addAdmin(LoginManager.getInstance().getUser(UUID.fromString((String)adminID)));
                 }
                 companies.add(newCompany);
-                System.out.println(newCompany);
             }   
             return companies;
         } catch(Exception e) {
@@ -466,7 +465,7 @@ public class DataWriter extends DataConstants{
         burger.setDescription("");
         burger.setCategory(Category.SOLO_PROJECT);
         ElectricMissiles.getColumn("Todo").addTask(curve);
-        ElectricMissiles.getColumn("Todo").addTask(burger);
+        ElectricMissiles.getColumn("Doing").addTask(burger);
         LoginManager.getInstance().addUser(atticus);
         LoginManager.getInstance().addUser(jeff);
         LoginManager.getInstance().addUser(owner);
@@ -477,7 +476,7 @@ public class DataWriter extends DataConstants{
         DataWriter.saveUsers();
         */
         AppFacade.getInstance().login("amadden@gmail.com", "password");
-        System.out.println(AppFacade.getInstance().getActiveUser());
-        //System.out.println(DataWriter.getCompanies());
+        System.out.println(LoginManager.getInstance().getUsers());
+        System.out.println(CompanyManager.getInstance().getCompanies());
     }
 }

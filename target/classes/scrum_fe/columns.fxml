@@ -2,9 +2,15 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -12,16 +18,397 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1459.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUpController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c0390" height="100.0" stroke="BLACK" strokeType="INSIDE" width="1459.0" />
-      <Text fx:id="boardName" fill="WHITE" layoutX="86.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOARD_NAME">
+      <Text fx:id="boardName" fill="WHITE" layoutX="86.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Missiles">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <HBox fx:id="columns" layoutY="100.0" prefHeight="760.0" prefWidth="1400.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="140.0">
+      <HBox fx:id="columns" layoutY="100.0" prefHeight="760.0" prefWidth="1400.0" spacing="5.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="140.0">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding></HBox>
-      <Button fx:id="createColumn" layoutX="1324.0" layoutY="106.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="115.0" text="Create Column" />
+         </padding>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="350.0" spacing="7.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Todo" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
+                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                     <children>
+                        <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Curve Cylinder" textAlignment="CENTER" wrappingWidth="350.21630859375">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Curve metal to make a cylindrical shape." textAlignment="CENTER" wrappingWidth="350.23291015625" />
+                        <Text fill="#ae942c" strokeType="OUTSIDE" strokeWidth="0.0" text="Assigned To:" textAlignment="CENTER" wrappingWidth="255.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus Madden" />
+                        <Text fill="#cd9825" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
+                        <Text fill="#bc9d24" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments:" textAlignment="CENTER" wrappingWidth="348.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff:  Not cylindrical enough." wrappingWidth="325.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: What's a cylinder" wrappingWidth="325.0" />
+                        <TextField fx:id="textfield" maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
+                                 <children>
+                                    <Button fx:id="leftbutton1" layoutX="33.0" layoutY="-4.0" minHeight="15.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="&lt;-">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
+                                 <children>
+                                    <Button fx:id="rightbutton1" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                     <children>
+                        <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Super Algorithm Initialization" textAlignment="CENTER" wrappingWidth="350.21630859375">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initialize super algorithm to detonate at warp speed." textAlignment="CENTER" wrappingWidth="350.23291015625" />
+                        <Text fill="#ae942c" strokeType="OUTSIDE" strokeWidth="0.0" text="Assigned To:" textAlignment="CENTER" wrappingWidth="255.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus Madden" />
+                        <Text fill="#cd9825" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
+                        <Text fill="#bc9d24" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments:" textAlignment="CENTER" wrappingWidth="348.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
+                                 <children>
+                                    <Button fx:id="leftbutton2" layoutX="33.0" layoutY="-4.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="&lt;-">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
+                                 <children>
+                                    <Button fx:id="rightbutton2" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </TilePane>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" spacing="7.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Doing" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
+                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                     <children>
+                        <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Impossible Burger Possible" textAlignment="CENTER" wrappingWidth="350.21630859375">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Figure out how to make the most delicious burger ever" textAlignment="CENTER" wrappingWidth="350.23291015625" />
+                        <Text fill="#ae942c" strokeType="OUTSIDE" strokeWidth="0.0" text="Assigned To:" textAlignment="CENTER" wrappingWidth="255.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus Madden" />
+                        <Text fill="#cd9825" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
+                        <Text fill="#bc9d24" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments:" textAlignment="CENTER" wrappingWidth="348.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: This is a stupid idea, Jeff." wrappingWidth="325.0" />
+                        <TextField maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
+                                 <children>
+                                    <Button fx:id="leftbutton3" layoutX="33.0" layoutY="-4.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="&lt;-">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
+                                 <children>
+                                    <Button fx:id="rightbutton3" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </TilePane>
+                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                     <children>
+                        <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Curve Cylinder" textAlignment="CENTER" wrappingWidth="350.21630859375">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Curve metal to make a cylindrical shape." textAlignment="CENTER" wrappingWidth="350.23291015625" />
+                        <Text fill="#ae942c" strokeType="OUTSIDE" strokeWidth="0.0" text="Assigned To:" textAlignment="CENTER" wrappingWidth="255.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
+                        <Text fill="#cd9825" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
+                        <Text fill="#bc9d24" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments:" textAlignment="CENTER" wrappingWidth="348.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff:  Not cylindrical enough." wrappingWidth="325.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: What's a cylinder" wrappingWidth="325.0" />
+                        <TextField maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
+                                 <children>
+                                    <Button fx:id="leftbutton4" layoutX="33.0" layoutY="-4.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="&lt;-">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
+                                 <children>
+                                    <Button fx:id="rightbutton4" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </TilePane>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="350.0" spacing="7.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Done" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
+                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                     <children>
+                        <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Impossible Burger Possible" textAlignment="CENTER" wrappingWidth="350.21630859375">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Figure out how to make the most delicious burger ever" textAlignment="CENTER" wrappingWidth="350.23291015625" />
+                        <Text fill="#ae942c" strokeType="OUTSIDE" strokeWidth="0.0" text="Assigned To:" textAlignment="CENTER" wrappingWidth="255.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus Madden" />
+                        <Text fill="#cd9825" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
+                        <Text fill="#bc9d24" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments:" textAlignment="CENTER" wrappingWidth="348.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: This is a stupid idea, Jeff." wrappingWidth="325.0" />
+                        <TextField maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
+                                 <children>
+                                    <Button fx:id="leftbutton5" layoutX="33.0" layoutY="-4.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="&lt;-">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
+                                 <children>
+                                    <Button fx:id="rightbutton5" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </TilePane>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="350.0" spacing="7.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Abandoned" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
+                  <TilePane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
+                     <children>
+                        <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Impossible Burger Possible" textAlignment="CENTER" wrappingWidth="350.21630859375">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Figure out how to make the most delicious burger ever" textAlignment="CENTER" wrappingWidth="350.23291015625" />
+                        <Text fill="#ae942c" strokeType="OUTSIDE" strokeWidth="0.0" text="Assigned To:" textAlignment="CENTER" wrappingWidth="255.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus Madden" />
+                        <Text fill="#cd9825" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
+                        <Text fill="#bc9d24" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments:" textAlignment="CENTER" wrappingWidth="348.21630859375">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: This is a stupid idea, Jeff." wrappingWidth="325.0" />
+                        <TextField maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <SplitPane minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
+                                       <items>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
+                                             <children>
+                                                <Button fx:id="leftbutton6" layoutX="33.0" layoutY="-4.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="&lt;-">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
+                                             <children>
+                                                <Button fx:id="rightbutton6" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </TilePane>
+               </children>
+            </VBox>
+         </children></HBox>
+      <Button fx:id="createColumn" layoutX="1324.0" layoutY="106.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text="Create Column" />
    </children>
    <stylesheets>
       <URL value="@styles.css" />

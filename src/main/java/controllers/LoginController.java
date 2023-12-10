@@ -52,7 +52,7 @@ public class LoginController {
             System.out.println("Active User: " + AppFacade.getInstance().getActiveUser());
             // BoardController.setWelcomeText(user.getFirstName(), user.getLastName());
             //Set Companies!
-            App.setRoot("board");
+            App.setRoot("columns");
         } else {
             // User is null, show the error label
             System.out.println("DEBUG: Log in Failed!!");
