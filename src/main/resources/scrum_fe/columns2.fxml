@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1459.0" xmlns="http://javafx.com/javafx/17.0.9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ColumnsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1459.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Columns2Controller">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0c0390" height="100.0" stroke="BLACK" strokeType="INSIDE" width="1459.0" />
       <Text fx:id="boardName" fill="WHITE" layoutX="86.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Missiles">
@@ -36,62 +36,6 @@
                      </font>
                   </Label>
                   <Button fx:id="addTasks" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#taskButton" prefHeight="30.0" prefWidth="200.0" text="Add Task" />
-                  <TilePane fx:id="curve1" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
-                     <children>
-                        <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Curve Cylinder" textAlignment="CENTER" wrappingWidth="350.21630859375">
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Curve metal to make a cylindrical shape." textAlignment="CENTER" wrappingWidth="350.23291015625" />
-                        <Text fill="#ae942c" strokeType="OUTSIDE" strokeWidth="0.0" text="Assigned To:" textAlignment="CENTER" wrappingWidth="255.21630859375">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus Madden" />
-                        <Text fill="#cd9825" strokeType="OUTSIDE" strokeWidth="0.0" text="Made By">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff Goldblum" />
-                        <Text fill="#bc9d24" strokeType="OUTSIDE" strokeWidth="0.0" text="Comments:" textAlignment="CENTER" wrappingWidth="348.21630859375">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff:  Not cylindrical enough." wrappingWidth="325.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: What's a cylinder" wrappingWidth="325.0" />
-                        <TextField fx:id="textfield" maxWidth="350.0" minHeight="20.0" minWidth="200.0" onAction="#textEntry" prefWidth="0.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                        <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
-                           <items>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
-                                 <children>
-                                    <Button fx:id="leftbutton1" layoutX="33.0" layoutY="-4.0" minHeight="15.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="102.0" text="&lt;-">
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="173.0">
-                                 <children>
-                                    <Button fx:id="rightbutton1" layoutX="38.0" layoutY="-3.0" minHeight="19.0" mnemonicParsing="false" onAction="#pushright1" prefHeight="33.0" prefWidth="102.0" text="-&gt;">
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                           </items>
-                        </SplitPane>
-                     </children>
-                  </TilePane>
                   <TilePane fx:id="init" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="346.0" style="-fx-background-color: FFFFFF;" vgap="2.0" visible="false">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Super Algorithm Initialization" textAlignment="CENTER" wrappingWidth="350.21630859375">
@@ -148,9 +92,9 @@
                   </TilePane>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" spacing="7.0">
+            <VBox fx:id="doingCol" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" spacing="7.0">
                <children>
-                  <Label fx:id="doingCol" alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Doing" textAlignment="CENTER">
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Doing" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -211,7 +155,7 @@
                         </SplitPane>
                      </children>
                   </TilePane>
-                  <TilePane fx:id="curve2" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0" visible="false">
+                  <TilePane fx:id="curve2" alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="265.0" prefTileHeight="20.0" prefTileWidth="100.0" prefWidth="350.0" style="-fx-background-color: FFFFFF;" vgap="2.0">
                      <children>
                         <Text fill="#e1a525" strokeType="OUTSIDE" strokeWidth="0.0" text="Curve Cylinder" textAlignment="CENTER" wrappingWidth="350.21630859375">
                            <cursor>
@@ -241,8 +185,7 @@
                         </Text>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jeff:  Not cylindrical enough." wrappingWidth="325.0" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus: What's a cylinder" wrappingWidth="325.0" />
-                        <TextField maxWidth="350.0" minHeight="20.0" minWidth="200.0" prefWidth="0.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atticus:  How about you do it Jeff?" wrappingWidth="325.43115234375" />
                         <SplitPane dividerPositions="0.5043604651162791" minHeight="28.0" minWidth="340.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: ffffff;">
                            <items>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="178.0">
@@ -334,7 +277,7 @@
                   </TilePane>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="350.0" spacing="7.0" visible="false">
+            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="350.0" spacing="7.0">
                <children>
                   <Label fx:id="abaondonedCol" alignment="CENTER" prefHeight="34.0" prefWidth="350.0" text="Abandoned" textAlignment="CENTER">
                      <font>
